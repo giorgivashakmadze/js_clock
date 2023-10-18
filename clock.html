@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>COCK</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+<script>
+    let hrs = document.getElementById("hrs")
+    let min = document.getElementById("min")
+    let sec = document.getElementById("sec")
+
+    function updateTime() {
+            let currentTime = new Date();
+            let hours = currentTime.getHours().toString().padStart(2, '0'); // Format hours
+            let minutes = currentTime.getMinutes().toString().padStart(2, '0'); // Format minutes
+            let seconds = currentTime.getSeconds().toString().padStart(2, '0'); // Format seconds
+
+            hrs.textContent = hours; // Update the displayed hours
+            min.textContent = minutes; // Update the displayed minutes
+            sec.textContent = seconds; // Update the displayed seconds
+        }
+
+        updateTime(); // Call the function immediately to display the current time
+        setInterval(updateTime, 1000); // Update the time every second
+    
+</script>    
+</body>
+</html>
